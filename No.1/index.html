@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>No.1 CSS Course</title>
+<style>
+.wrap { width: 300px; margin: 0 auto; }
+.txt { position: relative; width: 300px; height: 30px; line-height: 30px; margin-bottom: 20px; text-align: center; font-size: 18px; color: #000; transition: color 0.4s; overflow: hidden; }
+.txt:after { position: absolute; bottom: 0; left: 50%; content: ""; width: 0%; height: 3px; background-color: #666; transition: width 0.4s; transform: translateX(-50%); }
+.btn { width: 300px; height: 10px; text-align: center; cursor: pointer; }
+.txt .active { color: #666; }
+.txt.active:after { width: 100%; }
+</style>
+</head>
+<body>
+<div class="wrap">
+	<div class="txt">word</div>
+	<div class="btn">点击切换样式</div>
+</div>
+<script>
+	   var active = false;
+		var btn = document.querySelector('.btn');
+		var text = document.querySelector('.txt');
+		btn.onclick = function () {
+			if(!active){
+				active = true;
+				text.classList.add('active');
+			}else{
+				active = false;
+				text.classList.remove('active');
+			}
+		}
+	</script>
+</body>
+</html>
